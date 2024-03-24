@@ -89,7 +89,7 @@ with st.sidebar.expander('Roadway Part', expanded=True):
 
 # Speed Limit
 with st.sidebar.expander('Speed Limit', expanded=True):
-    st.image('https://github.com/dhamijam/ALY6050/raw/main/main/speed.png', width=50)
+    st.image('https://github.com/dhamijam/ALY6050/raw/main/speed.png', width=50)
     st.markdown('Select the speed limit on the roadway where you will ride.')
     speed_limit_key = 'speed_limit'
     speed_limit = st.slider('', min(df['Speed Limit']), max(df['Speed Limit']), step=5, key=speed_limit_key)
