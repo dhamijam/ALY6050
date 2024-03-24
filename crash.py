@@ -54,56 +54,56 @@ st.sidebar.title('User Input')
 
 # Active School Zone Flag
 with st.sidebar.expander('Active School Zone Flag', expanded=True):
-    st.image('images/school.png', width=50)
+    st.image('main/school.png', width=50)
     st.markdown('Select whether you will be riding through active school zone.')
     active_school_zone_key = 'active_school_zone'
     active_school_zone = st.selectbox('', df['Active School Zone Flag'].unique(), key=active_school_zone_key)
 
 # Construction Zone Flag
 with st.sidebar.expander('Construction Zone Flag', expanded=True):
-    st.image('images/construction.png', width=50)
+    st.image('main/construction.png', width=50)
     st.markdown('Select whether you will be riding through construction zone.')
     construction_zone_key = 'construction_zone'
     construction_zone = st.selectbox('', df['Construction Zone Flag'].unique(), key=construction_zone_key)
 
 # Crash Time
 with st.sidebar.expander('Crash Time', expanded=True):
-    st.image('images/clock.png', width=50)
+    st.image('main/clock.png', width=50)
     st.markdown('Select the time of day when you will ride (in military time).')
     crash_time_key = 'crash_time'
     crash_time = st.slider('', 0, 2400, step=100, key=crash_time_key)
 
 # Day of Week
 with st.sidebar.expander('Day of Week', expanded=True):
-    st.image('images/calendar.png', width=50)
+    st.image('main/calendar.png', width=50)
     st.markdown('Select the day of the week when you will ride.')
     day_of_week_key = 'day_of_week'
     day_of_week = st.selectbox('', df['Day of Week'].unique(), key=day_of_week_key)
 
 # Roadway Part
 with st.sidebar.expander('Roadway Part', expanded=True):
-    st.image('images/highway.png', width=50)
+    st.image('main/highway.png', width=50)
     st.markdown('Select the part of the roadway where you will ride.')
     roadway_part_key = 'roadway_part'
     roadway_part = st.selectbox('', df['Roadway Part'].unique(), key=roadway_part_key)
 
 # Speed Limit
 with st.sidebar.expander('Speed Limit', expanded=True):
-    st.image('images/speed.png', width=50)
+    st.image('main/speed.png', width=50)
     st.markdown('Select the speed limit on the roadway where you will ride.')
     speed_limit_key = 'speed_limit'
     speed_limit = st.slider('', min(df['Speed Limit']), max(df['Speed Limit']), step=5, key=speed_limit_key)
 
 # Surface Condition
 with st.sidebar.expander('Surface Condition', expanded=True):
-    st.image('images/snow.png', width=50)
+    st.image('main/snow.png', width=50)
     st.markdown('Select the surface condition of the roadway where you will ride.')
     surface_condition_key = 'surface_condition'
     surface_condition = st.selectbox('', df['Surface Condition'].unique(), key=surface_condition_key)
 
 # Person Helmet
 with st.sidebar.expander('Person Helmet', expanded=True):
-    st.image('images/helmet.png', width=50)
+    st.image('main/helmet.png', width=50)
     st.markdown('Select whether you will be wearing a helmet.')
     person_helmet_key = 'person_helmet'
     person_helmet = st.selectbox('', df['Person Helmet'].unique(), key=person_helmet_key)
