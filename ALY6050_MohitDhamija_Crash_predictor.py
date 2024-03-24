@@ -39,18 +39,41 @@ clf.fit(X_train, y_train)
 y_pred = clf.predict(X_test)
 accuracy = accuracy_score(y_test, y_pred)
 
-# Set up the layout for the title and introduction text
-st.title('Crash Severity Prediction')
-st.sidebar.title('User Input')
+# Title: Crash Severity Prediction
+st.markdown(
+    """
+    <div style='border: 2px solid #ffffff; border-radius: 5px; padding: 10px;'>
+        <h1 style='color: #ffffff; text-align: center;'>Crash Severity Prediction</h1>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
-# Introduction Text
-st.sidebar.markdown("""
-This app predicts the severity category of a crash based on various factors such as the presence of active school zones, construction zones, crash time, day of the week, roadway part, speed limit, surface condition, and whether the person was wearing a helmet.
+# Sidebar title: User Input
+st.sidebar.markdown(
+    """
+    <div style='border: 2px solid #ffffff; border-radius: 5px; padding: 10px;'>
+        <h1 style='color: #ffffff;'>User Input</h1>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
-Please select the relevant options from the sidebar and click the "Predict" button to see the predicted severity category.
-""")
-# Sidebar for user input
-st.sidebar.title('User Input')
+
+
+# Introduction Text and User Input Sidebar
+with st.sidebar:
+    st.markdown(
+        """
+        <div style='border: 1px solid #e6e6e6; border-radius: 5px; padding: 10px;'>
+            <h3 style='text-align: center;'>Introduction</h3>
+            <p>This app predicts the severity category of a crash based on various factors such as the presence of active school zones, construction zones, crash time, day of the week, roadway part, speed limit, surface condition, and whether the person was wearing a helmet.</p>
+            <p>Please select the relevant options from the sidebar and click the "Predict" button to see the predicted severity category.</p>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+    st.title('User Input')
 
 # Active School Zone Flag
 with st.sidebar.expander('Active School Zone Flag', expanded=True):
@@ -171,7 +194,14 @@ if st.sidebar.button('Predict', key='predict_button'):
     
     """, unsafe_allow_html=True)
     
-    st.markdown("<h3 style='text-align: center;'>Predicted Severity Category</h3>", unsafe_allow_html=True)
+    st.markdown(
+    """
+    <div style='border: 2px solid #ffffff; border-radius: 5px; padding: 10px;'>
+        <h3 style='text-align: center; color: #ffffff;'>Predicted Severity Category</h3>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
     
     # Increase the font size and change color based on severity category for predicted severity category
     st.write("<span style='font-size:60px; color:{};'>{}</span>".format(font_color, prediction_text), unsafe_allow_html=True)
